@@ -1,4 +1,4 @@
-# README for Podcast Episode Analysis: "They Think They’re Building God" - The Vergecast
+# Podcast Episode Analysis: "They Think They’re Building God" - The Vergecast
 
 ## Overview
 
