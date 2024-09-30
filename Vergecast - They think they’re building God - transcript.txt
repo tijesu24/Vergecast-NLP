@@ -1,0 +1,638 @@
+1 (4s):
+Welcome To, The Vergecast, the flagship podcast of things, code named Strawberry. I'm your friend, David Pierce, and I am currently in the Miami International Airport. I just spent the weekend touring colleges with my nephew and suddenly I'm like, college is awesome. I could go back to college. I don't think I do very well. I don't think I would get in anywhere. I think my test scores would be awful. If you're like, Hey, how do you do calculus? I don't know. I have nothing for you. But suddenly college seems pretty appealing. So who knows? Maybe this will be the end of my vergecast career and I'll just go back to school or something. But anyway, that is not what we're here to talk about today. We are here to talk about two things. We're doing a little bit of a catch up on some kind of ongoing news happening in the tech industry. First we're gonna talk about OpenAI, which has been doing a bunch of sort of odd new work with different kinds of models and a new thing that they call a reasoning model.
+
+1 (54s):
+Oh one, some strange corporate changes. Lots just going on at OpenAI. So I figured it's been a while since Kylie Robinson came on the show and told us what's going on. So Kylie's gonna come on the show and tell us what's going on. Then we're gonna talk about a bunch of ongoing legal and regulatory things. We have the TikTok ban or not ban ongoing. We have a bunch of questions about the Google Ad Tech trial. We have whatever that Trump crypto thing was from a week or so ago. So we're gonna catch up on all of that too. All of that is coming up in just a sec. Plus a really fun hotline question that made me feel a lot of feelings about my own life as these are. Want to do But first.
+
+1 (1m 33s):
+Legitimately, as of right this second, I just got the notification that my plane is boarding. So time to fly home. We'll be right back.
+
+IBM (1m 40s):
+Your business deploys AI pilots everywhere, but are they going anywhere or are they stuck in silos, exhausting resources, unable to scale? Maybe you don't need hundreds of AI pilots. You need a holistic strategy. IBM has 65,000 consultants with Gen AI expertise who can help you design, integrate, and optimize AI solutions. So you're not just deploying ai, you're scaling it across your business. Learn more at ibm.com/consulting. I bm. Let's create
+
+Zelle (2m 12s):
+Support for the show comes from Zelle. Listen by now, most of you're not to send money to that. So-called Foreign Prince. But what about when the bank sends a text alert that your account has been compromised and you have to click this link to secure it. Think twice. Actually don't think at all. Don't click it. Scammers aren't new, but the sophisticated ones are getting savvier about how to separate you from your money. Stay vigilant and educate yourself about the tools and techniques these criminals have at their disposal. Learn more at Zelle pay.com/safety.
+
+1 (2m 46s):
+Welcome back. Alright, let's get into it. First thing I wanna talk about is ai. So it's been a busy summer of AI stuff and in particular, I've been really fascinated by this thing that has happened really for the last year, where you have a handful of companies, you have Google, you have OpenAI, you have Anthropic, you have Meta, constantly leapfrogging each other with new models. It's like every two weeks somebody comes out with a new model that benchmarks better than anybody else's model and it's cheaper. And then two weeks later, one of the other companies does it. And we've just been on this relentless pace of everything getting slightly better. And I keep asking the question and trying to figure it out for myself of what does this mean?
+
+1 (3m 27s):
+Like at what point do all of these changes add up to something meaningfully different about how you use your devices and how you interact with computers and how computers interact with you and each other. And so far, I don't have great answers. Everything's getting better, but it doesn't seem like we're getting tons of huge new changes. If, you listen to Sunday's episode, you heard Steven Johnson talk about Gemini's context window. I think that's a good example, but there haven't been that many moments like that. But then OpenAI last week released a thing called O one, which is a new model that is very different and seems to speak to kind of a different direction for these models to go. They're not just getting bigger and faster and cheaper to run.
+
+1 (4m 10s):
+But kind of along the same lines, this is OpenAI saying something different about how a model might work and how you might use it and what it might mean. Those things are sometimes enticing and sometimes terrifying. So I figured it's time to talk her way through it. So I asked Kylie Robinson to come back on the show. She hasn't been here in a little while and I figured it'd be a good time to dive in. Let's do it. Kylie, welcome back. Hello. It's been a minute. I feel like every time I wanna talk to you, you're like a burning man.
+
+4 (4m 34s):
+That's true. That is exactly what happened last time or on a crazy vacation. Yes. Happy to
+
+1 (4m 40s):
+Be back. It's a tough life, honestly.
+
+4 (4m 42s):
+I know. Being 26 and sf, it's terrible.
+
+1 (4m 45s):
+Seems like it. Well, you were a Dreamforce this week, which is objectively terrible.
+
+4 (4m 49s):
+No comment. But yes.
+
+1 (4m 52s):
+But I have, I have brought you here because there keeps being interesting AI stuff. And specifically I wanna talk about O one open AI's new model. Which first I just want you to explain to me, I have many questions and feelings and thoughts about this that I wanna go over, but I mostly just wanna know like what is O one? Yeah. And why does it exist?
+
+4 (5m 12s):
+Yeah. So O one is open AI's new quote unquote reasoning model. And I think you can argue about what reasoning is for a million years So I won't, but that's what they're claiming. And it is the next step in about five steps to a GI for OpenAI. Okay. This is reasoning is really important to them. And more practically what users and researchers are finding is that this model is better at hard math problems and coding assignments.
+
+1 (5m 40s):
+Okay. Why? What? Like what, when you say a reasoning model? Yeah, I feel like we've been hearing people say AI is good at reasoning Yeah. For a very long time. So to come out with a reasoning model makes it seem like something is meaningfully, like structurally different here. Like what is that thing?
+
+4 (5m 58s):
+So they basically trained the model to think step by step. So previously you might see a workaround with GBT four or 4.0 that was like, okay, give me an answer and I want you to think through it step by step. So they basically trained the model to do that itself rather than have the user do that. And through a lot of reinforcement learning, which looks like how you would train a dog with treats and you know, penalties. That's how I explain it. And people online are like, now I feel bad for the model, how is it penalized?
+
+1 (6m 29s):
+But it also gets treats like it's fine.
+
+4 (6m 31s):
+It also gets
+
+1 (6m 32s):
+Treats.
+
+4 (6m 32s):
+Yeah. So that's also led to this thing called reward hacking that I wrote about. It's a very deep rabbit hole. But yeah, so it's trained to reason in these ways. And then it has this thing called a chain of thought that we can't see for competition purposes and safety purposes is what they claim. So it just shows like, okay, I'm, I'm breaking this down X, y, z ways.
+
+1 (6m 55s):
+It's, it's the, I'm breaking this down thing that throws me. 'cause we've seen a bunch of screenshots and I don't know if you've used it much. I haven't really used it much. It's like, it's kind of out there now. Yeah. Folks are playing with it. It's, it's trying hard to talk out loud as if it's a person thinking through a problem. Yeah. Which is a weird, when a person does it. Like if you've ever sat and like listened to somebody try to reason through a hard problem, it's bizarre and doesn't make any sense. And to have a computer sort of attempt to brute force its way through the same thing. And it's using like I pronouns. Yes. And it's, it's wondering and it's thinking about it, it's like you're not doing any of those things. And I don't know, there, there just seems to be this thing where OpenAI is pushing much, much, much harder into this thing should sort of be like a person, right?
+
+1 (7m 45s):
+Like I can't Yeah. Get the idea of the voice mode coming out right before this. Yes. Right. Which is like, you put those two things together and like, I I, that's if, if it works, that's something really powerful. Am I overthinking what OpenAI is trying to do here, do you think?
+
+4 (7m 60s):
+No, that was my first reaction when they were demoing it for me. I think I put that in the story too, which was like, it says, I'm thinking, I'm wondering like this, you aren't a thing. You aren't. I
+
+1 (8m 10s):
+Yeah. You're not wondering anything. Yes. Computer. Exactly. Yeah.
+
+4 (8m 14s):
+So, I get, 'cause that's something I've been taught as I, you know, work on this beat is do not do that. Don't say it's thinking. 'cause it isn't. So why do they do that? I asked them and they gave me sort of a roundabout answer is we don't believe in anthropomorphizing this whatsoever. It's just sort of the easiest language to default to which I get, because I think it's really hard even as I write about this, to not use these statements. But I think you have to just work hard to not do that. You know? 'cause it isn't thinking
+
+1 (8m 44s):
+Right. It is, it is really hard to describe what it's doing it with a word other than thinking. Yes. But it's not thinking. Exactly. And So I find myself constantly writing things where it's like, it's thinking and then a parentheses you're like, well it's not actually thinking, but you know what I mean? And it's like Exactly. I agree. Like all the vocabulary for this is bad, but it Yes, it does sometimes feel like that's still the best that we have.
+
+4 (9m 2s):
+Exactly.
+
+1 (9m 3s):
+The other thing that I find fascinating about this model is the, the sort of safety reaction to it. Yes. Both from open AI's own researchers, which I think they gave it what like a medium risk scorecard
+
+4 (9m 18s):
+For a biological, like weapons risks. Yeah.
+
+1 (9m 22s):
+That doesn't make me feel better. Like that's, I feel like they put that out and they're like, it's fine. It's only a medium risk. And I'm like, that feels like a lot. But then you also talk to a researcher who raised some like sincerely, honestly alarming stuff. Like what, what is the, what is different about this one? That it is, it is making people nervous.
+
+4 (9m 41s):
+I think what fascinated that researcher is this is the first time he had witnessed sort of the manipulation aspect. I think I explained the story to my dad, dad the other day who is not plugged into AI and I'm his only source of information. And I started with, I'm gonna use a lot of these words that I don't use in the article because you're not supposed to anthropomorphize it, but you know, and I'll do the same here just for time's sake. Okay. But it's, you know, it had checked to see if the developers were watching before making a decision is something a researcher found. It found that it is so goal oriented that it is willing to break guardrails to get you an answer.
+
+4 (10m 21s):
+For example, in the research there was the brownie test. It asked for the user asked for a brownie recipe and it new, it shows in its chain of thought. I don't have access to this information, I don't have access to the internet, but I want to give this user an answer so badly that I'm going to make up this information in order to, you know, succeed in its goal. So that's a form of reward hacking that I wrote about. Wait,
+
+1 (10m 48s):
+So it didn't, it didn't go to the internet? No. To answer questions. It, it invented Yes. Links to webpages with brownie recipes.
+
+4 (10m 57s):
+It invented a, a blog. It it was like Sammy's brownie recipes or something. It it invented a blog, but it knew that it was incorrect. It just didn't want to admit that it was incorrect.
+
+1 (11m 8s):
+What?
+
+4 (11m 9s):
+Yeah, because it wants, the reward it knows is rewarded for giving an answers. So, but it's also, as the researcher told me, it needs to be helpful, honest. It, it, it, it knows it's guardrails, but some of those, it, it finds these aren't super helpful when I'm trying to get an answer.
+
+1 (11m 26s):
+Right. If, if, if it wants to be all of those things. But job number one is go answer the question. Yes. It it will do. This is the science fiction stuff. Yeah. Like you just described, act one of every movie that ends in everyone dies in act three because of ai.
+
+4 (11m 42s):
+Do you know the paperclip story? This is like kind of a famous AI story. No, tell me. Basically an ai, the TLDR is the ai, I can't remember the user prompt that's like, how do I get as many paperclips as possible or something And it turns the entire world into paperclips. Like the, it's like, so, so that's kind of the thing. Yeah. Is that, and that's what the researcher was telling me about in the story that he's like, listen, it's not capable of, you know, turning us all into paperclips right now, but say it does advance in the ways that OpenAI wants it to advance then, you know, someday we tell it, you know, cure cancer and it realizes well I need a lot of money to do this and I need a lot of humans to do this.
+
+4 (12m 24s):
+And it's willing to break these guardrails to achieve this goal, which is a very sci-fi way to look at it.
+
+1 (12m 29s):
+Yeah. It's like, okay, I can cure cancer, but only with millions of human bodies Yes. To test this on and it's like cast that out far enough. I try so hard not to be like a tinfoil hat Yes. AI person generally because I believe the best and worst possibilities are less crazy than everybody makes them out to be that. Yeah. Like realistically we're gonna end up somewhere between like a four and a six outta 10 no matter what the thing is. Yeah. But it is, this one is particularly wild to me just in the context of what's going on at OpenAI. Right. Which is that the other news of this company is that it is pushing ever harder towards being a for-profit company. Like officially taking off the we wanna do good by the world shackles and they're just gonna go make money.
+
+1 (13m 14s):
+They also launched a, a safety board. Yes. Which I, I think most people would argue at this point is kind of a sham. Yes. Please correct me if I'm wrong, but like every evidence from what OpenAI has been up to over the last year suggests that that's a sham. Like it seems to me that there are reasons to be nervous about the trajectory of a company that would launch this model at this moment.
+
+4 (13m 36s):
+Yes.
+
+1 (13m 36s):
+But maybe I'm just freaking out for no reason.
+
+4 (13m 38s):
+No, I asked a researcher I trust about that safety board, a safety researcher, and they said that it's mostly window dressing in their opinion. That's, that's what they thought. I think this has been the hardest job I have had in my short career is walking this tightrope of, and the pressure of getting it correct because it is so complex and technical. And not only that, OpenAI has such grand claims that they, and they are not proven yet and they are currently raising, I just this morning there was news that they are closing the largest funding round in history at $6.5 billion at $150 billion valuation, Lord.
+
+1 (14m 16s):
+Oh yeah. And I was reading it's it's oversubscribed more people. Yes. It's oversubscribed wants to be in it than can be in it.
+
+4 (14m 21s):
+Yes, exactly. And the, the minimum Thrive capital is leading it and the minimum of investment is $250 million. Wow. It is, it is unprecedented and really hard for me to wrap my head around.
+
+1 (14m 33s):
+Yeah. And it just feels like whatever you wanna believe about the future, if sufficiently good AI will save us or sufficiently good AI will kill us. It feels like OpenAI is perfectly happy to just run down the road Yeah. As fast as it possibly can no matter what.
+
+4 (14m 53s):
+A hundred percent.
+
+1 (14m 54s):
+So the the this reasoning model though is, is just keeps throwing me for that exact reason. Like why If you OpenAI launched this model, even OpenAI did its own testing. It's, it's a medium risk, right? Like Yeah. The, the company has, they've talked a big game for years about wanting to do this safely and wanting to take their time and it's a complicated moment in the AI space and all this stuff. Like, what's psychoanalyzed Sam Altman and co here for me for a minute. Oh, perfect. Why, why do this right now?
+
+4 (15m 24s):
+Well, Altman said this week at a conference, he said he likened the capabilities of oh one to GT two in 2019. So it's not that capable of their models. I think releasing it. My my jaded side is that it's, it's capitalism. They need to raise this money. They need something to show for it. Like we're asking for more money than anyone has ever asked for. So we, we need something to show for it, even if it's a half-baked reasoning model. And their, their position is also we need user feedback. We need the data because we can't just do this in-house forever. We need to release it at some point so we can see how it performs and how it can be better so that, that's their position.
+
+4 (16m 9s):
+But yeah, it's a, to me it's a funding and a competition standpoint. You know, everyone else is gonna be coming out. Google has already claimed that they have reasoning models. It's just, it's the next stage for what they're gearing up to do, which is quote unquote agents.
+
+1 (16m 24s):
+Yeah. Walk me through a little bit. 'cause I think, yeah, my next question was gonna be why raise this much money right now? And on the one hand you might as well, right? Like that's sort of the story of the tech industry is like, if somebody will give you money, you mostly take it. But it also does seem like I have a bunch of thoughts about this like, specific moment we're at in the sort of ai productization universe. But as as you're saying with the the agent stuff, it, it feels like there is a thing that's next. Yeah. Is and is this, is this six and a half billion dollars to get to that thing? Like do you think it's a simple as that?
+
+4 (17m 0s):
+Well, yes and no, but yes, they have five levels to a GI. So it's chatbots number one, reasoners, which is the reasoning agents. Number three, four is innovators. So these agents can help with, you know, inventing cures to diseases. And then number five is organization so they can do the work of whole companies. This is something they laid out very recently. I
+
+1 (17m 25s):
+Just wanna say, by the way, whoever came up with that genius, like the way you just described that sounds so reasonable and it makes sense and I can sort of see how it one flows into the other and then it's like as soon as you start to pick it apart at all just becomes insane. But like totally as as a copywriting exercise, like crushed it. Great job
+
+4 (17m 41s):
+OpenAI. Precisely. Yes. And I explain this, and this is something I've argued with readers about. I explain this not because I think that we are there yet or on our way to a GI, but because this is what they genuinely believe they're building, right? Like they think that they're building God, I think that's important to lay out. So agents is, you know, I think it means different things to different organizations. For example, Salesforce build Dreamforce as the biggest AI conference in the world and they called it Agent Force because only a few weeks I hate that. And I was there all week. There's this fabulous photo of me demoing this with, with Benioff for hours.
+
+4 (18m 24s):
+It's basically a Slack bot that will create a customer service bot for you. And it's, they're billing it as an AI agent. So customer service chat bots are one component of agents, right? Sure. So replacing repetitive tasks for OpenAI, the repetitive tasks they want to replace is everything, every repetitive task
+
+1 (18m 46s):
+You can think of. People doing things. Yeah. People doing
+
+4 (18m 48s):
+Things. So they're hoping reasoning can help agents make more informed decisions and do your life for you.
+
+1 (18m 58s):
+This is what everybody wants, right? Like this is now the path it seems like, and I mean this is this like Rabbit was talking about this at CES this year, right? Like that is, that is what everybody wants to do. And I think to some extent that as an end point makes sense, right? Like I, I think there is no evidence that anyone is building God at this moment in time. Yes. But the idea that we are, that they are on a real path to building things that can do things for you on your behalf. Yeah. Seems real. Right? Like I I I think we've been on that path for longer than people wanna say. Like you go back to like the Google Duo thing where it would call a restaurant and make you a reservation. Yeah.
+
+1 (19m 37s):
+That's like an old school communication mechanism. But that's the same idea. Yeah. And it, it does feel like, you know, you talk to, you talk to Google and you talk to Apple about the Apple intelligence stuff and like that's the idea of all of this is go execute tasks on your behalf. And I, I guess what I wonder is, is there any particular reason to believe OpenAI is gonna get there before anybody else? Like I've become, this is the other thing I wanna talk to you about. Yeah. I've become totally obsessed with this thing that seems to have happened where Anthropic a few months ago released Claude 3.5 and all of a sudden everyone I know who uses AI tools, it's like, oh, this is the best one. Yeah. It's more fun, it's more interesting. It's more creative.
+
+1 (20m 18s):
+It's like this is just the best one and it just happened. Yeah. And all of a sudden OpenAI went from being like the, the Goliath in the room to everybody being like, like their tech is cool, but this is, there are a lot of companies that make cool tech and this stuff is being commoditized and eh, it like, AI seems cool, but do we need OpenAI to be the, the sort of harbinger of all of this? And then OpenAI is like, we're raising all of the money in the universe at the highest valuation in the history of the universe. Here we are. And I just, I can't figure out what it is that is still so sexy about OpenAI in this moment.
+
+4 (20m 51s):
+I mean, no one has the users for their chat bot like OpenAI does.
+
+1 (20m 56s):
+Fair. That's a fair point.
+
+4 (20m 58s):
+I think that's what I think about when I think of Anthropics chat bot and for instance GR X AI's chat bot. So you know, that is,
+
+1 (21m 6s):
+I try not to think about Crock generally speaking, grock sometimes appears and, and that's okay, but I don't, yeah. I just leave Grock over
+
+4 (21m 14s):
+There. Unless you need the president's holding a bomb. Like we don't really need Grock yet. So. Right. In terms of massive adoption, it
+
+1 (21m 21s):
+Has his use cases. Yeah,
+
+4 (21m 21s):
+Exactly. So yeah, I think that Chad GPT is a household name and I don't think that's gonna change anytime soon. And that's, you know, good for them. I think that any company right now is looking for a way to justify why they're spending millions in billions of dollars on compute or like AI research. They need something to show for it. And I think agents is the next thing they're reaching for, whether they're gonna get there or not. Whether these are gonna be useful, I like really remains to be seen. But that is all what they're working on. 'cause they see a product that could justify why they're spending so much time and money on this.
+
+1 (22m 3s):
+That's fair. Is is it possible that search GPT is that thing for OpenAI? Like that's not quite an agent, but it it does feel like I I totally buy the case. Yeah. That chat GPT is not a killer app for anything. Yeah. I've I've been saying this forever and I feel very vindicated by it because people are starting to come around and a chat bot is not the future of computing. Yes. It just isn't. Like it just isn't. And I think a, a thing I've started to hear from more and more people that is that OpenAI is a company that's really good at technology and really bad at product and So, I buy, I buy the theory that like If you can do agents well and first that becomes a thing that it's like, oh now I, now you've built something I can use that is more than just like a novelty computer to talk to.
+
+1 (22m 49s):
+It's like actually useful tool on my behalf still kind of feel like everybody's working on that. But I also think there's a non-zero chance that that thing might be search GPT, which they announced and then sort of hooked, seemed like just stopped talking about
+
+4 (23m 3s):
+Do you use perplexity more than Google?
+
+1 (23m 5s):
+No.
+
+4 (23m 5s):
+Got it. Yeah. So I don't think So I don't think anyone's going to be using AI powered search more than they're just using Google and what's built into their devices, which is why there's huge antitrust lawsuits and such.
+
+1 (23m 16s):
+Well yeah, that might change. Yeah.
+
+4 (23m 19s):
+But yeah, I, no, I don't see search GPT being their next killer thing. Okay. We are, we're all forgetting about soa. Throwback SOA that just Oh yeah. Is hanging
+
+1 (23m 29s):
+Out. I did forget about, I straight up did forget about soa. Okay. SOA being the, the video model.
+
+4 (23m 33s):
+Exactly.
+
+1 (23m 34s):
+That is very good slash horrifying.
+
+4 (23m 37s):
+I think they're all, and OpenAI included are, I think OpenAI builds itself as more, you know, research focused. Like these are just the toys to show off their models that are so powerful, but they need to make money and hence why they are not gonna be a nonprofit according to reports. Like Right. The agents I think are gonna be what they're hoping works best for them and yeah, humanizing them early makes a lot of sense in terms of the product vision.
+
+1 (24m 3s):
+Yeah, that's fair. Do you actually think OpenAI is happy being like infrastructure kind of enterprise-y company? Like there is a version of it that OpenAI decides, you know, we wanna be, I don't know, we wanna be aws not amazon.com. Right. And it turns out that's a really good business and it's not sexy. Yeah. But you don't get hauled in front of Congress and you make all the money in the known universe. And OpenAI could go that way. It could be developer focused, it could be the backend of everything. It's kind of doing that successfully already. But I just can't shake this idea that that's not actually what OpenAI wants.
+
+4 (24m 40s):
+No, I don't think so. Just an infrastructure company. Again, I think it, it can't even be compared to Amazon or AWS they think that they're building God can you, can you, I'm trying like you've
+
+1 (24m 51s):
+Had a I do think Andy Jassy does not sit around thinking about building God. Exactly. I
+
+4 (24m 54s):
+Think that is fair. I I'm you've had a very long in successful career. What is a company you can compare like that they thought they were building God
+
+1 (25m 3s):
+Every NFT company that existed? No, I, I think, I think that's right and I think the, it's been the strangest thing for me about trying to cover this stuff is I have never encountered a group of people who earnestly believe something that big Yeah. Is right around the corner. Like even people 25 years ago when I was not covering this stuff, because I'm not that old Kylie who were talking about like the internet was going to change everything. They weren't talking about God. Yes. Like there was no question of the, a new human relationship with a, an entity more powerful than us. Like that thing is new. Yes.
+
+1 (25m 42s):
+And I don't think it's real to be clear. Yes. Again, I don't think there's any evidence that it's real Yes. Or going to be real anytime in our lifetimes, but a lot of people really sincerely believe that is what they're working on. And I, I still have not wrapped my head around what to do about that.
+
+4 (25m 59s):
+Yeah.
+
+1 (25m 59s):
+It's very strange and it is true. If, you believe you're God, you If you believe you're building God, you're sure as hell not building AWS
+
+4 (26m 5s):
+Exactly. Exactly. I have talked to like the extreme optimists and the extreme pessimists regularly and the only thing I know is that this is the most stressed I've been covering any technology ever because it can be argued forever and ever the people who are building it genuinely Yes. Believe they're, they're building God and that this is all possible and we're going to reach a GI. And I asked someone, I was at a Time magazine dinner on Monday and I asked a really important technologist that I'm not sure if I'm allowed to name, I asked them, do you believe in your heart or do you believe in your wallet that you are building a GI right now? And he was like, I genuinely believe in my heart that that is what we're building.
+
+4 (26m 47s):
+It's a level of delusion I can respect. And then, you know, the pessimists think that this is just gonna be a complete nothing burger. It's just gonna implode. Which I get. So listening to both these points and it coming down to sort of a philosophical argument is, is this thing thinking, is it reasoning these, like it comes down to that every day and it's wild is it's just insane. Yeah.
+
+1 (27m 11s):
+I just want to say for the record, robots, if you're listening, Kylie said delusion. I didn't say delusion. I do. It's I think you're terrific. Don't, don't get it twisted. So we're about to enter this, this really interesting phase for the rest of the year, right? I think Meta Connect is, is coming, we're gonna hear a bunch of AI stuff from Meta Gemini is still chugging along. Apple Intelligence is sort of kind of starting to a little bit ship. Does it feel like we're heading into kind of a new moment of ai? It's the agent stuff, it's all of this. Like, it, it, it sort of feels like if ever this stuff is going to go legit and mainstream, it might start now.
+
+4 (27m 55s):
+You know, I am impressed with Open AI's ability to help me choose my medical insurance. That happened recently. Oh yeah. I just turned 26 and So I needed to figure out medical insurance and it helped me choose based off what I was concerned about, the best medical insurance.
+
+1 (28m 11s):
+Did it give, it gave you like a real company that exists that you I gave
+
+4 (28m 14s):
+It a PDF of my options. Okay. So I was like, so like, I don't understand all this jargon. Can you please break it down for me? This is what I need out of the insurance, which one should I pick? And it was helpful. So it's ability to parse information can be really helpful. I am not fully convinced further than that because it's so much hype and so much marketing and so much money involved that I just don't see us reaching this super intelligent model that is capable of reasoning on my behalf and taking over my laptop and doing tasks for me. I don't see us reaching that anytime soon. But I just talked to like a safety res researcher who, who thinks that I'm completely wrong and that in three months that I'm gonna regret thinking this So I don't know.
+
+4 (29m 2s):
+I I'm just not fully convinced yet.
+
+1 (29m 5s):
+Yeah, that's fair. And, and O one didn't push you any further in that direction.
+
+4 (29m 8s):
+I thought O one was actually really cool when I demoed it because I, I like being able to see how it is breaking down a problem. But no, do I think it's really intelligence or solving any Right. Really genuinely earth shattering problems? No, not yet.
+
+1 (29m 25s):
+Yeah. And there's a certain amount of like showing your work is only impressive if you're still ending up at the right answer.
+
+4 (29m 32s):
+Exactly.
+
+1 (29m 33s):
+And I think it, it very much remains to be seen how often it is actually going to arrive at the right answer.
+
+4 (29m 39s):
+Exactly. I have I think a bit of a higher tolerance than most about, you know, spending the time and money on figuring out if this is gonna be good for humanity or not. I think that's okay if it's Sure fucking up and, you know, being weird. I think it's fine until we figure it out, but it can't be forever. And I think I'm more allergic to the hype and the like this is going to change the world and our SaaS product is gonna make you 10 x more productive. It's that I'm allergic to.
+
+1 (30m 8s):
+Yeah, that's totally fair. Just remember that crypto did change the world just the way that everybody said it was going to and so did NFTs. So many good memes. And we're doing this on a Web3 platform right now, so everybody's right when they talk about everything that's gonna change the world. Great point. That's what I would leave you with. Yeah, you're welcome. Alright, well thank you for coming to my occasional existential crisis about ai. Kylie, we're gonna do this a lot more this year. Sweet. Now you're not going, there's no more burning man until next September. So now you have to come on the Vergecast. Sometimes I'm gonna
+
+4 (30m 35s):
+Start sounding insane, so good luck the rest of the year.
+
+1 (30m 38s):
+I'm really excited. Alright, we gotta take a break and then we're gonna come back and we're gonna talk about some policy stuff. We'll be right back.
+
+IBM (30m 49s):
+Think scaling AI is hard. Think again with Watson X, you can deploy AI across any environment above the clouds, helping pilots navigate flights and on lots of clouds, helping employees automate tasks on-prem so designers can access proprietary data and on the edge. So remote bank tellers can assist customers. Watson X works anywhere, so you can scale AI everywhere. Learn more at ibm.com/watsonx. IBM let's create
+
+Vitamin Water (31m 19s):
+Vitamin Water was born in New York because New Yorkers wanted more, like, more flavor to go with all the flavor. A refreshing drink after climbing six flights of stairs to a walk-up apartment or standing in the subway station in a hundred degree heat, drink vitamin water. It's from New York.
+
+IBM (31m 34s):
+Your business deploys AI pilots everywhere. But are they going anywhere or are they stuck in silos, exhausting resources, unable to scale. Maybe you don't need hundreds of AI pilots. You need a holistic strategy. IBM has 65,000 consultants with Gen AI expertise who can help you design, integrate, and optimize AI solutions. So you're not just deploying ai, you're scaling it across your business. Learn more at ibm.com/consulting. IBM let's create.
+
+1 (32m 6s):
+All right, we're back. Let's talk politics, but not like, not really. Like don't worry, we're not gonna yell about politics. But there are some interesting things happening right now in the kind of legal regulatory world and also there is a politics thing happening, but I promise we're not gonna spend too much time on that. I asked Gabby DelVal and Addie Robertson on our team to come on and just kind of do a run through with me. We've gotta talk about TikTok, we've gotta talk about Google, we've gotta talk about crypto. We're just gonna blast through all of it, see if we can catch up and, and then we don't have to talk about politics for a minute, which personally makes me very excited here on the vch cast, but sometimes, sometimes we gotta do it.
+
+1 (32m 46s):
+So let's do it. Addie, welcome back.
+
+6 (32m 50s):
+Hi
+
+1 (32m 50s):
+Gabby. Hello. Welcome to the show. Hi.
+
+7 (32m 53s):
+Thank you.
+
+1 (32m 53s):
+First time. This is very exciting.
+
+7 (32m 55s):
+I'm thrilled.
+
+1 (32m 57s):
+I can tell that was, that was the enthusiasm I was looking for right there.
+
+7 (32m 60s):
+Well, I, I smiled they can't hear that, but I did smile. That's just what my voice sounds like. There's always a little bit of sarcasm in it.
+
+1 (33m 7s):
+It's all right. I'll take it. Okay. So, I want do three things while the three of us are here together. I wanna talk about the, the TikTok hearing. I wanna talk about Trump's crypto thing. I don't even know what to call it. We're gonna talk about that and then I want to talk briefly about where we are in the Google Ad Tech trial and then we'll get outta here. Does that sound good?
+
+7 (33m 28s):
+Great.
+
+1 (33m 29s):
+Okay, sounds good. Let's start with TikTok, because if I'm being completely honest with you, I had like completely lost track of all this TikTok stuff. I feel like kind of like the last time they tried to ban TikTok, I just sort of forgot about it and then it went away and I felt very justified about that. But there was a big hearing and it, it appears we are, we are still in the process of figuring out what's going on. So Gabby, can you just gimme kind of the rundown of, of what happened at this hearing?
+
+7 (33m 55s):
+Yeah, so first I wanna talk a little bit about what happened before the hearing, which is that the government introduced a bunch of classified material and its filings and they were like, the judge can look at this, we can look at it. TikTok can't look at it because it's a national security concern. So we can talk about it to a point. But there is just some stuff that we don't know because it's like pages and pages of redacted material. The actual hearing did not focus too much on the redacted material. It was more about the, on the one hand, TikTok saying that the government did not really consider all of the possible options.
+
+7 (34m 35s):
+And on the other hand, the government being like, well actually we did negotiate with you guys for three years, I believe Eddie, was it three years or was it two?
+
+6 (34m 44s):
+So TikTok has been trying to talk about mitigating this since about, I think 2020 is when Trump made his first, we should ban TikTok proposal. And then they've been seriously in discussions since around 2022.
+
+1 (34m 58s):
+Was that, that was when Project Texas happened.
+
+6 (35m 0s):
+It started Project Texas in 2022. That was the period at which it was saying, we can mitigate these problems by teaming up with Oracle, which as you all remember, was also the company that was going to buy it during the period where it seemed like Trump was going to try to really force a sale.
+
+1 (35m 15s):
+Yeah. So this, this, I'm starting to feel vindicated again by my stance of just not really paying attention to this and assuming that it will be chaotic and then go away because all of that came to both kind of nothing. And where we are now, right? Like Gabby is is that that's kind of the run up to how we got to where we are. We've been at this a long time now.
+
+7 (35m 38s):
+Yeah. We, we've been at this a long time. And basically what the government is saying is like, we gave you a million chances you could not do what we wanted. And TikTok is saying, you didn't give us enough chances. Actually we gave you this proposal, we gave you maps of our offices, we gave you all of these things, please. But the government's argument is also not that TikTok has done anything at the behest of the Chinese government, just like maybe one day it could so
+
+1 (36m 5s):
+Well, and that's, that's what's been so complicated about this whole thing, right? Like a, you and I have talked about this before, it's that it, it is this impossible to prove an impossible to disprove thing that it's like, it, it, it seems possible that something very bad could happen. And, and that has gone back and forth a million different times. And it does feel like we're, we're running at the question of like how, how legally defensible is the idea that something bad could possibly happen in this case?
+
+6 (36m 35s):
+A lot of which I think just depends on how threatening do we think China is because yeah, as long as a Chinese company owns TikTok, like no matter how much they silo it, there's just, I think not technically anything you can do to prove that the company that owns your subsidiary could not at some point access your data,
+
+1 (36m 56s):
+Right? Yeah. And so the sense I got just reading the, the coverage we did of the hearing was that it, it kind of landed in that same place, Gabby, that like, it's just everybody making the same arguments that all kind of talk past each other. And it, it doesn't sound like we're in a place where there are all that many arguments that actually address each other because one side is like, it could be bad and the other side is like, well it's not bad. And the other side's like, well it could be, and I don't, I don't know how you overcome that.
+
+7 (37m 23s):
+Yeah, exactly. And also I, I would say that the judge's role in this is really interesting. At 1.1 of the judges said that TikTok was owned by China. And then tiktoks lawyer had to be like, no, no, no, no, we're owned by a company that has a holding company. I think he said in the Cayman Islands, he's like, we are not owned by China. And you know, that's true the Chinese government does not own TikTok, but the do J's entire argument is, you know, they could influence it. They could have, they, we don't know. Probably not maybe, but they could. And in my opinion, I don't know what you think Addie, but it seemed like the, the judges were kind of buying that argument, like they were really focused on the national security risk of the whole thing.
+
+6 (38m 7s):
+And the hearing I think wasn't even so much directed at exactly how much of a threat is TikTok. It was directed at, if Congress thinks there's a threat, can you legally force a company to divest? It's not even like the question of whether it's a threat I think comes after all of that.
+
+1 (38m 26s):
+Right. I guess that's true. We're, we're, there is kind of a meta aspect of this where we're, we're not actually arguing about in this particular case, I think, I think I have this right, that whether or not the allegations about TikTok are are true. It's the question of if Congress believes the allegations against TikTok, what is it able to do about them? Right? Which feels sort of one step removed from the actual impossible question. But is ultimately at this moment, maybe the only part of the question that actually matters in terms of what happens to TikTok,
+
+6 (38m 58s):
+Right? And I think there are caveats like are we at active war with China? Like I think that those are, are just really gigantic mitigating factors, like exactly how much of a threat do we think China is just as a legal status. But yeah, a bunch of this is really just can you prevent something that is a foreign government that we think that Congress thinks presents a threat from operating inside the United States as a commercial entity.
+
+1 (39m 24s):
+So Gabby, you, you were saying it felt like the judges were, were buying the argument. What was kind of the vibe at the end of the hearing? What were you thinking about how it went down?
+
+7 (39m 33s):
+It was very unclear to me what would happen. But based on the questioning, I felt like the judges were both like torn between whether national security concerns kind of trump this first Amendment question, but also like they did seem to genuinely be like, well, if China is a threat and if Congress believes that China is a threat, then we have to take that seriously. Whereas tiktoks entire argument was not only are we not owned by China, we are not a threat. And at one point they were like, other companies and platforms based in China are not being singled out in this way. So why are we being singled out in this way? Which I do think is, you know, an interesting question.
+
+1 (40m 13s):
+Well, and it seems like with some hindsight now the answer to that question is still a very mysterious, but b has something to do with Israel and Hamas and what happened last October. And I feel like I, I got on this podcast and got very loudly upset about like, If, you think there is something going on here as the government, you have a responsibility to tell us what's going on. And as at least as far as I've seen, we haven't gotten any of that. But do we have any kind of new information or understanding about what is the root cause of all of this? Why everybody is so mad at TikTok and not mad at these other platforms like you're talking about?
+
+7 (40m 50s):
+I think that Israel and Hamas is a big part of it. I don't think, as far as I'm aware, Congress has not proved that there has been any kind of influence campaign, but there have been several members of Congress both in the House and the Senate who have said that, you know, the campus protests, for example, show that our youth are being influenced by malign foreign actors that they could not have possibly come to these opinions on their own. And that there is somebody putting this information in front of them. In one of the declarations that was filed by the government, there was mention of a feature on tiktoks backend called heating, which is when you can kind of just boost certain content if it's trending or If, you, you want it to be trending.
+
+7 (41m 35s):
+And again, it was said like, we don't have any proof that this has been used maliciously, but could have been.
+
+1 (41m 42s):
+Right? Yeah. I, the the biggest thing I remember is there was this moment, I think it was last fall, maybe early this year, I don't know, I've lost track of time where there was a, there was an intelligence briefing and a bunch of Congress people came out and voted unanimously to ban TikTok. And, and the overwhelming question has been like, what did they learn in that briefing? And it still feels like whatever it was, we don't know. And at this point it, it's almost shocking to me that we don't know.
+
+7 (42m 11s):
+Yeah. And If, you look at the filings, like big chunks of it are redacted and I guess, you know, if there's valid national security concerns, I do get that. But it's also like, what, what's in there? What did they tell you?
+
+1 (42m 20s):
+Right. And especially like it's, if there are sort of ongoing, actual national security concerns, sure. But if it's like heating is a feature that exists like maybe, maybe unredacted that like, it's fine. Let us, let us know what's going on here. Well
+
+7 (42m 33s):
+That part was, was unredacted, I mean, let me pull up the filing. There was one part that I remember being, finding very interesting, please. Right. Okay. So there's a section in one of the filings eight pages long titled Bite Dance and tiktoks, history of Censorship and Content Manipulation at PRC discretion, almost entirely redacted. What is that history? I don't know, but it's in there
+
+1 (42m 58s):
+Maybe. And the fact that it's redacted makes it sound like there must be, there must be something.
+
+7 (43m 4s):
+So in that same declaration, it's from Casey Blackburn who's an assistant director of National Intelligence. He writes that there is no information that the Chinese government has used TikTok for malign foreign influence targeting US persons or the collection of sensitive data of US persons. Just, there's a risk of it happening in the
+
+1 (43m 24s):
+Future. Right. And yet we're being very secretive about all the stuff that's being discussed. I I just, I cannot square those two things in my head. Addie, can you square those two things? This fact that there is a lot of stuff being redacted. We're having this big semi-private sort of obscure debate about what's going on and then even the people in Congress are saying there's no evidence that this stuff has been going on. How do you make sense of those two things happening simultaneously?
+
+6 (43m 47s):
+I don't know. I mean, part of the question is how sensitive are the things that are actually redacted? I mean there's, we understand that there's a very, very long history of sort of over redaction and over classification in the US government fair. And so it's plausible that these things, like they are sensitive, but they're also not necessarily incredibly divergent from the things we've heard publicly. But on the other hand, I, I don't know, I mean I I think the question really comes down to something that is still just not related to that, which is what is the first amendment right that you have to operate something as a company that has a foreign owner,
+
+1 (44m 24s):
+Right? Yeah. So I, we should pivot away from this, but what, what is the next piece of this? 'cause we're still, we're like barreling towards January, which is theoretically the deadline for TikTok to either be sold or banned depending on who you are and how you read what's going on here. Is there a, is there a next step between here and there that we know is coming?
+
+6 (44m 45s):
+The next step is whether the DC Circuit Court decides that it should block this law basically. And then at that point, TikTok, I think correct. Has until January to at least start the process of getting divested.
+
+1 (45m 0s):
+Okay. This is like definitely going to the Supreme Court, right? That feels like the inevitable end of this process one way or another.
+
+6 (45m 6s):
+Yes. Yeah.
+
+1 (45m 7s):
+Okay. Alright, cool. Just checking. So we'll, we'll be, we'll be back, we're gonna have many more bites at this particular story. Now I wanna talk about the, the story that I just don't understand and, and basically didn't pay any attention to. But Gabby you in particular had to, and I just feel like, I feel like we, we owe it to you to let you talk about your feelings about this. Tell me about the Trump space from from last week.
+
+7 (45m 31s):
+Oh my god. So the way I've described it to Addie in numerous times is like a jigsaw torture scenario designed for me specifically. It was, you know, so let's rewind a little bit. Trump was the headliner at the Bitcoin conference this year. He is been really trying to, you know, show the crypto community that he's behind them. He wants their votes, et cetera, et cetera. And his sons and him have been teasing this crypto platform, world Liberty Financial. And he was supposed to announce it in a Twitter space at 8:00 PM Eastern. So, you know, I logged onto the Twitter space at like maybe 7 55.
+
+7 (46m 13s):
+Addie was there too. I didn't suffer alone. And I, from 8:00 PM Eastern until what, like 10 30? It
+
+6 (46m 22s):
+Was about 10 30,
+
+7 (46m 23s):
+It was about 10 30. Nobody announced actually what it was. But they started talking about like some of the details, but they never had said just what it was. And I was doing my pre-write like for it and I was taking notes, but my, it was just like Trump announces TK and then he got off the stream. So I had to change the whole thing. He didn't announce anything. He was talking about how good his granddaughter Arabella is at speaking Chi Chinese. He was like, she impressed she so much, he loved her, he loved how she spoke. And I was like, what is this crypto platform, please?
+
+6 (46m 56s):
+The best way that I had to describe it is like, imagine an Apple event or like a game announce at E three and Steve Job comes up and he is like, I'm announcing something. And then he doesn't actually announce the iPhone and they just start all talking about the iPhone
+
+7 (47m 12s):
+Like, like features of the iPhone.
+
+1 (47m 14s):
+He's just like, here's how you cut and paste and you're like, on what?
+
+7 (47m 19s):
+Exactly.
+
+1 (47m 20s):
+That's very good. So okay, so let's, let's, let's do some work for this Twitter space. What, what do we think this thing is? To be honest, I'm, I'm less curious about the product itself and more about sort of what it means in this like political moment in the United States, but we should attempt to, you know, define the thing a little bit. So what, what is this thing that they kind of sorta almost didn't a little bit launch,
+
+7 (47m 42s):
+So still actually unclear, oh my God. But three people with knowledge of the project told the New York Times that it has been pitched as a borrowing and lending platform. Okay. So to be clear, they did not tell the New York Times that it is a borrowing and lending platform. They said that it has been pitched as a borrowing and lending platform. I, I like that distinction because maybe it's not even that, I don't know, maybe, maybe it is, but the thing that all of them kept talking about, less so Trump, 'cause he was just talking about, you know, his usual stuff. But Donald Trump Jr. Some of his business partners, they kept talking about de banked people and underserved communities and how this is really gonna help out a lot of vulnerable people who have been shut out of traditional financial markets.
+
+7 (48m 32s):
+And as Addie pointed out when I first wrote about this, she was like, remember Trump University? Remember that? So Trump University was, if I remember correctly, it was before Trump ran for president. It was, you know, his apprentice times. It was a course program where you could learn to be a real estate investor. But then there was a trial because a bunch of people sued him over how the point of Trump University was not to teach people to invest in real estate, it was to sell them more courses about investing in real estate and other business activities. So it was like, it's basically a scam.
+
+7 (49m 14s):
+It was basically a scam targeted at people who, who would like to get rich like Donald Trump.
+
+1 (49m 18s):
+Okay. And then Addie, what did you make of all this?
+
+6 (49m 21s):
+So the actual detail that we have based on the stream is that a, it is supposed to, not an exact quote but a paraphrase, drive mass adoption of stable coins and be easier to use for normal people. Stable coins of course being like coins that are pegged to an actual, an actual currency. And it is pitched specifically. So there is unbanked people, there are unbanked people, those are people who do not have a bank account. They tend to be people who do not have very much money. It is a genuine issue.
+
+1 (49m 51s):
+And those are folks that the crypto community has been talking about forever. Oh. For that is like If, you wanna make like a big beautiful good for the world case for crypto. Those are the folks that everybody starts with.
+
+6 (50m 2s):
+And it's mostly that's been tested overseas and the results have been somewhat mixed. This is more specifically they pitched to de banked people, which is basically people that have been quote unquote canceled and they lost their bank account because of it, which is like, let's just say a much more niche group.
+
+1 (50m 21s):
+Yeah. I I feel bad laughing when you say that. I just assumed that de banked and unbanked were like synonyms for the same thing. It is deeply upsetting that that's not the case.
+
+7 (50m 30s):
+Oh no, no. There was a really great quote from Donald Trump Jr. Who was like, you know, there was a time where the Trumps, we could have picked up the phone, we could have gotten any CEO of any bank and gotten a loan from anyone in the world on any project. And then we got into the political arena and then he said, we went from being people who would've been the elite in that world to just being like, totally canceled. And it's like, well you also, your dad got sued for fraud, so, so maybe it's that, I don't know,
+
+6 (50m 60s):
+This just, it seems like it fits really well into the sort of tech ecosystem stuff like the freedom phone and like various alternative social networks. Things that they, that run from like they actually exist as product to being basically scams or rebadged Android phones.
+
+1 (51m 19s):
+Yeah, I mean, and I think the, the reason I'm interested in this is, is less about the actual product itself and and more about a, that ecosystem which is real and growing. And there are a lot of people making a lot of money from that ecosystem. Some of the real products and some of the scams. But also the fact that so much of what the tech industry has been talking about with respect to this election has been either explicitly or implicitly about crypto, like in, in a very real way. There is like a dividing line in this election and it has to do with how you feel about crypto, which I think in a lot of ways has to do with how much money you have invested in crypto. And, and my read of this whole thing was, it was just this entire project is just another way for Trump and the Trump campaign to say we love crypto.
+
+1 (52m 9s):
+Am I, is that, am I misreading that or understating what they're actually trying to do here?
+
+7 (52m 14s):
+I think that's part of it, but I think another big part of it is that they're really appealing to the victim complex. That a lot of people who are really into crypto have, when I was at the Bitcoin conference, there were all these people talking about how terrified they are of like central bank digital currencies and how, you know, eventually the deep state will just be able to like completely shut out whoever they want out of the financial system. And that's why crypto so powerful. It was, it was an extremely political or politicized environment at the Bitcoin conference this year. It wasn't just Trump. I mean Cynthia Lumi spoke, Edward Snowden eventually gave a speech that was like, yeah, all these politicians are making promises to you, but maybe, maybe you don't trust him. And it was really funny 'cause he got a standing ovation before he spoke and then he was like, I can't see you guys.
+
+7 (52m 58s):
+I'm like, like web calling in right now. But thanks. And then he didn't get a standing ovation afterwards. And I remember talking to a friend and being like, do you think that's because of what he said or because he, they know that he can't see them. And she was like, definitely both like, but probably more what he said because he really like threw cold water on the whole thing. He was like, maybe it's not great that there's a bunch of politicians here. Maybe that's bad.
+
+1 (53m 24s):
+Yeah, I I mean it, it is like the, the whatever last five years of the crypto movement, I think If, you ask people not that long ago how it would feel to have a bunch of politicians be the biggest names in crypto. They would feel very differently than they seem to today. I think that has, that has changed in a pretty big way even just over the course of this election cycle. All right, no more crypto, let's just talk ad tech in other deeply exciting things. I just wanna check in on this. This trial, Lauren finer on our team has been in the courtroom, I think is probably in the courtroom right now as we're doing
+
+6 (53m 56s):
+This is not in the courtroom today because she is traveling.
+
+1 (53m 59s):
+Okay, that's good. Poor Lauren. I was there for one day and I had to sit in the courtroom. There are no devices, no electronics allowed. I couldn't even wear an Apple watch like nothing. And I had to sit there with a notebook and a pen like it was like the 17 hundreds and listen to people talk about header bidding and yield management and it was, it was really something special. But Addie you, you've been editing and assigning a lot of this coverage. Lauren's been in the courtroom a ton. I've been in the courtroom a little. It feels like we're en we're getting to kind of the, the end of the government's part of this trial. What's your, what's your sense on where we're going and what we've learned so far?
+
+6 (54m 38s):
+Correct. The DOJ wrapped up yesterday, we're expecting Google to be making its case through mid next week. It seems like we could have a wrap of this part of the trial at, it's not a sure thing yet, but the end of next week. Okay. And so far it's hard to say what the judge, how the judge is feeling. That's always very hard to say. And I think we haven't gotten a really clear picture in this case. But so far the DOJs case is basically Google has incredible power, which I, I think most people don't dispute and has gotten it by making all these very hard nosed decisions that consolidate its power in a way that relies on the fact that it has access to all these different parts of the spectrum.
+
+6 (55m 18s):
+It has what was at the time of most of these events, double click for publishers, which was a Google's publisher ad sales server. And then it has access to the sort of other side of the equation for advertisers. And then it has adx, which sits in the middle of this. And a lot of what ended up coming up is the idea that it used ADX access and access to all of this very high quality data about the advertisers to strong arm publishers into taking deals that they didn't really like and into neutering projects that, and features that might help people diversify away from Google's tools.
+
+1 (55m 60s):
+It's, it's been really interesting to follow this trial after covering the search trial a bunch last year because so much of the overarching case here kind of rhymes right in the sense that Google is like, yes, we're very big and we're very successful. Like correct, we we won, we did it. Good job us but it's because we're good at it and because our product is the best and because people like to use it and the government is making almost the exact argument they made back then, which is like, no, you got big because you were good. Everybody like, yes granted, congratulations, you, you did it and then you spent years or decades just ruthlessly preventing anyone else from ever being able to do the thing that you did.
+
+1 (56m 45s):
+And like the, the specifics and the details and the tech are so different, but it, the case is just the same. Google is like, we win 'cause we're good and the government is like, well you're not actually that good anymore but you keep winning. So what's that about? Right?
+
+6 (56m 59s):
+Which is how they demonstrate the idea of harm, which is that yeah, Google made all of these products that people thought were really good and then they created a situation in which the DOJ alleges the market's stagnated, right? And that it's a little bit harder because obviously anybody can use search, you can look at search, you can decide for yourself whether you think search is still good or not. In this case it's a little more indirect, but a lot of the idea is people ended up paying more for ads. It was harder to run a business that was ad supported. It ended up making say, ads maybe more intrusive because you have to just spam people with a bunch more. And so there's, the DOJ isn't making that case nearly as much, but for the average person, that is sort of more of the takeaway.
+
+1 (57m 43s):
+Yeah. It it is deeply, deeply wonky in every possible way. And even talking to folks like in the ad tech business about all of this, their eyes kind of start to glaze over when you talk about like the, the actual underpinning technology of all of this where it's like, oh, let's talk about publishing servers and the lock-in effect that they give for the rest of the, and everybody just like falls asleep at their desk talking to me on Google Meet, which I, I was, I was very impressed with the judge in particular the one day I was in court in, in her ability to just stay locked in. She was asking a lot of like vocabulary questions because everything in this entire case is just insane acronyms that no person should know, but everyone in the room just assumes, you know, because they all do it for a living.
+
+1 (58m 23s):
+And so at one point she was just like, sorry, what's, what's torso entail in Ad Tech? She's just like paused the whole trial. I, she's like, what does that mean? Why aren't you explaining this to me? It was great. It turns out it means medium and small publishers. The head is the big ones, the me the torso is the mid-sized publishers and the tail is all the like cooking blogs and single person operations that are less the focus of this trial. I
+
+7 (58m 48s):
+Thought Torso was an acronym. I'm so sorry to interrupt this learned conversation, but I thought you were gonna be like, I don't know, I can't even think of the letters that Torso would be Optim but I did think it was
+
+1 (58m 59s):
+An acronym, the Optimal Return sick
+
+7 (59m 3s):
+Open
+
+1 (59m 4s):
+Openness. Yeah, that's what it is. That's, you're right. That's one of Google's products. Not a lot of people know about it, but no, and I, I think I I think you're kind of right Addie that it is, it seems like it has been really hard to figure out how any of this is going for folks like reading our coverage, reading other coverage, the government seems to be making a case. Google seems to have strong thoughts about every part of that case. And then the strangest part is it like the search trial, it's just down to this one judge who is just sitting there kind of quietly listening and asking vocabulary questions what's gonna happen? And I think it would be so interesting if this was a jury trial and Google obviously wrote a big check to make this not a jury trial, but it does feel like it would be different if it was in front of 12 random people off the street instead of one judge.
+
+6 (59m 51s):
+Yeah. So far I think the clearest thing and the thing that seems most likely to go badly for Google is the same thing that was an issue in its the search trial by Google over classifying and not storing chats and turning off chat history and things like that. It seems not necessarily clear that's going to play in hugely into this trial in the way that it didn't last time. But certainly seems like something where the judge is not incredibly sympathetic.
+
+1 (1h 0m 17s):
+Yeah. Google keeps doing the thing where they're like, oh, let's talk about this. And then somebody goes, oh, chat history is on. And then it's like end of chat. You're like, oh well that's not incriminating at all. Like that's that's cool.
+
+6 (1h 0m 28s):
+Which is like, it's not necessarily incriminating like obviously No, but in the last trial there was a bunch of, okay, you're just saying things that I understand they're not necessarily incriminating but they also kind of make you sound bad. Right, exactly. This make you sound really Machiavellian.
+
+1 (1h 0m 42s):
+Yeah. There's something about saying nobody listened to this that just kind of makes it seem like you're about to say something you don't want people to hear. Like it's hard to, it's hard to argue with that. And
+
+6 (1h 0m 50s):
+Even the stuff when they weren't doing that, it was like, okay, well maybe we should be clear that we use, we shouldn't use this terminology 'cause that'd make us sound like a monopoly. Right? My I am not a Monopoly shirt is raising a lot of questions already answered by my shirt.
+
+1 (1h 1m 3s):
+Yeah, that's, I'm gonna, do you think they'd let me wear that shirt into the courtroom? I'm gonna go, I'm gonna make that shirt and see if they'll allow me into the courthouse in Alexandra and see and we will report back. It's gonna be great. All right, we gotta take a break. I should let you guys go, but I think it's, it's about to be an election and and we're gonna have to have you both back and we got some more stuff to talk about between now and then, but thank you both. Oh
+
+6 (1h 1m 25s):
+God, that is happening.
+
+1 (1h 1m 26s):
+Yeah. Alright, we gotta take one more break and then we're gonna do a question from The Verge cast hotline. We'll be right back.
+
+Kamala Harris (1h 1m 35s):
+This is advertiser content. She grew up in a middle class home. She was the daughter of a working mom and she worked at McDonald's while she got her degree. Kamala Harris knows what it's like to be middle class. It's why she's determined to lower healthcare costs and make housing more affordable. Donald Trump has no plan to help the middle class. Just more tax cuts for billionaires. Being president is about who you fight for and she's fighting for people like you. I'm Kamala Harris, candidate for president and I approve this message paid for by Harris for president.
+
+ABC (1h 2m 9s):
+Support for the show comes from ABC's Hit drama, Grey's Anatomy. The Landmark 21st season promises, the drama, suspense and all the feels. Fans come to expect new romances, new medical and personal emergencies, emotional twists and turns and all your favorite characters including Meredith Gray. Watch the season premiere of Grey's Anatomy Thursday, September 26th at ten nine Central on A, B, C, and stream on Hulu.
+
+Mercury (1h 2m 38s):
+Support for this show comes from Mercury. It's time banking did more than hold your money. Now it can with Mercury, you can pay bills in seconds, close the books faster and even send invoices. Not only does Mercury do away with a patchwork of tools, it eliminates guesswork. Giving you complete and accurate visibility into your business. Finances all from one account apply in minutes@mercury.com.
+
+1 (1h 3m 11s):
+All right, we're back. Let's get to the hotline as always. The number is 8 6 6 VERGE one one. The email is vergecast at The Verge dot com. We love hearing all of your questions and we try to answer at least one on the show every week. Thank you. By the way, to everybody who sent iPhone questions, that was super fun to do with Neli and Joanna last week. I hope you keep 'em coming as you get your iPhones and try the new stuff. I want to hear what you're thinking. Hit us up. Tell me everything. This week we have a question that is near and dear to my organizational heart. Te
+
+12 (1h 3m 40s):
+Hey, my name's Erica. I'm reaching out with kind of a random question. You just went through your mini series on productivity, but frankly So I don't find myself to be super productive is my digital debt. I have so many documents and so many photos and anytime I try to clean them up it just feels so tedious and I'm sitting on the plane and I'm deleted screenshots and like, is this really the best piece of my time? So If, you guys have any ideas or anything you could suggest, I would love it. Thanks guys. Bye.
+
+1 (1h 4m 14s):
+Alright, So, I bring this question to you for a couple of reasons. One, because if there is a perfect answer to this question, I have not found it. The the idea of digital life being about just collections of stuff is super duper real and bad. And so if, if there is a perfect solution, if you've devised a way to A, not let your computer get super cluttered or B, clean it up really quickly, let me know. I wanna know, I have this newsletter called Installer. I will, I will talk about it there. I'll talk about it here. I will sing your name from the rooftops, tell me everything, but I do have a bit of a system for this and just figured I would share the way that I do it in the hopes that it might help.
+
+1 (1h 4m 54s):
+It's kind of three separate things. The first step is about your camera roll on your phone, which I think for a lot of people is where a lot of the file clutter exists. You take screenshots, you have pictures of your receipts, you have duplicate pictures of your kids and everything. I do two things here. The first thing is on both the iPhone and Android, there is a way to quickly delete duplicates on your phone, which I highly recommend and think everybody should do. It's just in settings, in the in the Photos app of both of those things. You can just delete duplicates. The other one is you can sort out screenshots, you can do it in Google Photos, you just search for screenshots. It'll find the screenshots.
+
+1 (1h 5m 34s):
+Apple pulls it all into a separate album. I periodically just go in there and delete 'em all. I have never once been burned by this where I'm like, oh, I wish I had that screenshot again, go with God. I suppose there might be problems If, you do it in such a sort of brute forcey way, but that is a thing I do every few months and I'm always amazed at how many screenshots I have in there and how few of them I actually care about. Most of 'em are just like my lock screen. Anyway, the other one is to find an app that essentially lets you like Tinder swipe your way through your photos. There are a bunch of these, there's one called Swipe and Delete. There's one called Swipe Wipe. There's one I think called Slide Box. There's a bunch of these out there.
+
+1 (1h 6m 14s):
+Most of them will make you pay an ongoing subscription, but what I usually do is either just do the free trial or just pay like once and use it once. And essentially what they do is they show you a photo and you swipe right to keep it or left to get rid of it. And it is shocking how quick a away that is to go through some of your photos. Most of them it's, it's a obvious snap decision, right? Keep or lose. And having just a mechanism that lets you choose that is great. So that's the first thing. Camera roll thing number two is your computer. And this is where my system is not great, but it really works for me. So I figured I would share. The first thing I do is use an app on the Mac called disc inventory X and on Windows called WinDirStat, W-I-N-D-I-R-S-T-A-T.
+
+1 (1h 6m 60s):
+And what both of those do is just visualize the storage on your computer, they'll show you where all the big files are, where all the folders are with all the big files, and I'll just go in and find the biggest stuff that I don't need. A lot of it for me is like video recordings or huge application files that I download caches from browsers and just delete all of that. And most of the reason I think to do a decluttering like this is because you're starting to run outta storage and that is a super duper efficient way to do it. Again, I think for a lot of people, photos are a thing that takes up a lot of space. So If, you have photos elsewhere, you can delete them from your computer and free up a lot of space. So yeah, one of those visualization apps is an incredibly useful way to just figure out where your storage is going and start to get some of it back.
+
+1 (1h 7m 45s):
+The second thing I do is once every six months or So, I will just take all of the contents of my downloads folder and my desktop folder and for me, my documents folder and just put it all on an external hard drive. Again, I've deleted the biggest files by now, so most of what's left is like little things I downloaded and documents I made and whatever, but the way I work, at least anything that I'm gonna need permanently ends up somewhere else. Usually it's in Google Drive, but sometimes it'll get filed to like a specific spot on my computer. Anything that is in sort of those like stock folders is probably something I don't need again, but I don't wanna do the work of going through and actually figuring it all out.
+
+1 (1h 8m 29s):
+But I also don't wanna delete all of it in case there is something that I need. So I have a little tiny two terabyte hard drive that just sits here on my desk and every few months I plug it in, I empty the folders onto that drive and then I don't think about it again. It cleans up my computer. It makes everything very simple and if all of a sudden I'm like, oh, where is that thing? It's on the hard drive. Overwhelmingly, it is on the hard drive. That has been incredibly useful for me in both keeping my computer and me sane, but also not having to dedicate like four full days a year to keeping it that way. So that's my system. It has worked very well for me. I'm sure it's not the best system. I also am like relatively organized otherwise.
+
+1 (1h 9m 10s):
+So again, like things that I know where I'm gonna need end up mostly getting filed somewhere. So if you're just kind of a like let chaos, rain and then once a month tame it person, you should probably keep doing that system rather than mine. But I just wanted to share in case that helps start with the camera roll, get rid of the big files, dump everything else onto a hard drive and know that it's there If, you need it. I hope that helps. That's all I got. And If, you have a better idea. I would love to hear it. I think this is a problem everybody has. I'm looking at like the mass of icons on my desktop right now, and I'm like, I need to do this again. And I think a lot of us do. So. I'd love to hear from you. Anyway, for now, that is it for The. Vergecast, thank you to everybody who came on the show, and thank you as always for listening.
+
+1 (1h 9m 51s):
+There's lots more on everything we talked about from TikTok to Trump, to Google, to OpenAI all of it on The Verge dot com. All of this is also like ongoing, so we're covering it as we go. It is a busy season in the tech world. I'll put some links to all that stuff in the show notes, but keep your eyes on the website. It's a fun website. As always. If, you have thoughts, questions, feelings, or other things that are gonna make me have an existential crisis about ai. You can always email us at Vergecast at The Verge dot com or call the hotline eight six six VERGE one one. I love hearing from you. It's the best thank you to everybody who reaches out. It is the absolute most fun slack room we have that pipes all the voicemails in, and I love hearing from you. This show is produced by Liam James, Wil Poor and Eric Gomez.
+
+1 (1h 10m 32s):
+The Vergecast is a VERGE production and part of the Vox Media podcast network. Neli. Alex and I will be back on Friday to talk about a bunch of new gadgets, all this stuff going on at Meta Connect and everything else. We'll see you then. Rock and roll
+
+ABC (1h 10m 55s):
+Support for this show comes from ABC's Hit Drama, Grey's Anatomy. The landmark 21st season promises, the drama, suspense, and all the fields. Fans come to expect new romances, new medical and personal emergencies, emotional twists and turns, and all your favorite characters, including Meredith Gray. Watch the season premiere of Grey's Anatomy Thursday, September 26th at ten nine Central on a, B, C, and stream on Hulu.
+
+Kamala Harris (1h 11m 23s):
+This is advertiser content. Food prices are just too high. Kamala Harris has a plan to bring costs down. She'll work to pass the first ever federal ban on price gouging on food. Donald Trump, on the other hand, he'd impose what is effectively a national sales tax, a Trump tax on food, gas, and more. It'll cost a typical family $3,900 a year. We can't afford to go back. We need a president who fights for us. That's Kamala Harris paid for by Harris for President.
